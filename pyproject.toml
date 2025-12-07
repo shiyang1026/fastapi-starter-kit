@@ -1,0 +1,32 @@
+[project]
+name = "fastapi-starter-kit"
+version = "0.1.0"
+description = "A starter kit for building applications with FastAPI."
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "alembic>=1.17.2",
+    "asyncpg>=0.31.0",
+    "bcrypt==4.0.1",
+    "fastapi[standard]>=0.124.0",
+    "greenlet>=3.3.0",
+    "loguru>=0.7.3",
+    "pwdlib[argon2]>=0.3.0",
+    "pydantic-settings>=2.12.0",
+    "pyjwt>=2.10.1",
+    "redis>=7.1.0",
+    "sqlmodel>=0.0.27",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.8",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP"]
+ignore = []

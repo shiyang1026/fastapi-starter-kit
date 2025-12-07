@@ -1,0 +1,19 @@
+{
+    "[python]": {
+        // 指定 Ruff 为默认格式化工具 (替代 Black)
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        // 开启保存自动格式化 (调整空格、空行、缩进)
+        "editor.formatOnSave": true,
+        // 开启保存自动修复 (修复 Lint 错误、排序 Import、删除未使用的变量)
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    },
+    // 排除一些不需要 Ruff 扫描的文件夹
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.ruff_cache": true
+    }
+}
