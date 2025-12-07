@@ -41,3 +41,15 @@ infra-down:
 infra-logs:
 	# 查看依赖日志
 	docker compose -f docker-compose-dev.yaml logs -f
+
+# --- Code Quality ---
+.PHONY: lint
+lint:
+	# 检查代码风格
+	uv run ruff check .
+
+.PHONY: format
+format:
+	# 格式化代码
+	uv run ruff check --fix .
+	uv run ruff format .
