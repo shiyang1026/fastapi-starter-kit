@@ -34,11 +34,11 @@ class Settings(BaseSettings):
         raise ValueError(v)
 
     # PostgreSQL 数据库配置
-    POSTGRES_SERVER: str = "localhost"
-    POSTGRES_USER: str = "postgres"
-    POSTGRES_PASSWORD: str = "postgres"
-    POSTGRES_DB: str = "postgres"
-    POSTGRES_PORT: int = 5432
+    POSTGRES_SERVER: str
+    POSTGRES_USER: str
+    POSTGRES_PASSWORD: str
+    POSTGRES_DB: str
+    POSTGRES_PORT: int
 
     SQLALCHEMY_DATABASE_URI: PostgresDsn | str | None = None
 
@@ -63,10 +63,10 @@ class Settings(BaseSettings):
         return self.ENVIRONMENT in ["local", "development"]
 
     # Redis 配置
-    REDIS_HOST: str = "localhost"
-    REDIS_PORT: int = 6379
-    REDIS_DB: int = 0
-    REDIS_PASSWORD: str | None = None
+    REDIS_HOST: str
+    REDIS_PORT: int
+    REDIS_DB: int
+    REDIS_PASSWORD: str | None
 
     @property
     def REDIS_URL(self) -> str:
@@ -75,7 +75,7 @@ class Settings(BaseSettings):
         return f"redis://{self.REDIS_HOST}:{self.REDIS_PORT}/{self.REDIS_DB}"
 
     model_config = SettingsConfigDict(
-        case_sensitive=True, env_file=".env", extra="ignore"
+        case_sensitive=True, env_file=".env.dev", extra="ignore"
     )
 
 
