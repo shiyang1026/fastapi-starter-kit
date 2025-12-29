@@ -26,21 +26,22 @@ downgrade:
 	uv run alembic downgrade -1
 
 # --- Docker Compose Infrastructure ---
+ENV_FILE := .env.dev
 
 .PHONY: infra-up
 infra-up:
 	# 启动本地开发依赖 (DB & Redis)
-	docker compose -f docker-compose-dev.yaml up -d
+	docker compose --env-file $(ENV_FILE) -f docker-compose-dev.yaml up -d
 
 .PHONY: infra-down
 infra-down:
 	# 停止依赖
-	docker compose -f docker-compose-dev.yaml down
+	docker compose --env-file $(ENV_FILE) -f docker-compose-dev.yaml down
 
 .PHONY: infra-logs
 infra-logs:
 	# 查看依赖日志
-	docker compose -f docker-compose-dev.yaml logs -f
+	docker compose --env-file $(ENV_FILE) -f docker-compose-dev.yaml logs -f
 
 # --- Code Quality ---
 .PHONY: lint
