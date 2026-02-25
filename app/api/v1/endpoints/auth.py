@@ -9,9 +9,9 @@ from app.core.config import settings
 from app.core.deps import get_db
 from app.core.exceptions import UnauthorizedException
 from app.core.response import Response
-from app.schemas.auth import Token
-from app.schemas.user import UserCreate, UserLogin, UserOut, UserRegister
-from app.services.user_service import UserService
+from app.schema.auth import Token
+from app.schema.user import UserCreate, UserLogin, UserOut, UserRegister
+from app.service.user_service import UserService
 
 router = APIRouter()
 

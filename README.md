@@ -97,11 +97,11 @@ make dev
 
 新增数据表时的标准流程：
 
-1. **定义模型**: 在 `app/models/` 下创建新的模型文件（或在现有文件中添加）。
+1. **定义模型**: 在 `app/model/` 下创建新的模型文件（或在现有文件中添加）。
 2. **注册模型**: **关键步骤！** 必须在 `alembic/env.py` 中导入新定义的模型，否则 Alembic 无法检测到变更。
    ```python
    # alembic/env.py
-   from app.models.new_model import NewModel  # noqa
+   from app.model.new_model import NewModel  # noqa
    ```
 3. **生成迁移**:
    ```bash
@@ -122,8 +122,8 @@ app/
 ├── api/          # API 路由定义 (Endpoints)
 ├── core/         # 核心配置 (Config, Security, Events)
 ├── db/           # 数据库连接与 Session 管理
-├── models/       # SQLModel 数据模型定义
-├── schemas/      # Pydantic 数据验证模型 (Request/Response)
-├── services/     # 复杂业务逻辑层
+├── model/        # SQLModel 数据模型定义
+├── schema/       # Pydantic 数据验证模型 (Request/Response)
+├── service/      # 复杂业务逻辑层
 └── main.py       # 应用入口文件
 ```

@@ -11,8 +11,8 @@ from app.core import security
 from app.core.config import settings
 from app.core.exceptions import UnauthorizedException
 from app.db.session import async_session_factory, redis_pool
-from app.models.user import User
-from app.services.user_service import UserService
+from app.model.user import User
+from app.service.user_service import UserService
 
 reusable_oauth2 = OAuth2PasswordBearer(
     tokenUrl=f"{settings.API_V1_STR}/auth/login/access-token"

@@ -11,11 +11,11 @@ from alembic import context
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))  # 项目根目录加入 sys.path
 from app.core.config import settings  # noqa
-from app.models.base import SQLModel  # noqa
+from app.model.base import SQLModel  # noqa
 
 # 这里必须导入所有会让 Model 注册到 MetaData 的模块
-# 例如: from app.models.user import User
-from app.models.user import User  # noqa
+# 例如: from app.model.user import User
+from app.model.user import User  # noqa
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

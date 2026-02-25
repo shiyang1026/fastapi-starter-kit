@@ -4,8 +4,8 @@ from sqlmodel.ext.asyncio.session import AsyncSession
 
 from app.core import security
 from app.core.exceptions import BadRequestException
-from app.models.user import User
-from app.schemas.user import UserCreate
+from app.model.user import User
+from app.schema.user import UserCreate
 
 
 class UserService:

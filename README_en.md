@@ -97,11 +97,11 @@ This project provides a `Makefile` to simplify common operations:
 
 The standard process when adding a new table:
 
-1. **Define Model**: Create a new model file in `app/models/` (or add to an existing one).
+1. **Define Model**: Create a new model file in `app/model/` (or add to an existing one).
 2. **Register Model**: **Critical Step!** You must import the new model in `alembic/env.py`, otherwise Alembic cannot detect the changes.
    ```python
    # alembic/env.py
-   from app.models.new_model import NewModel  # noqa
+   from app.model.new_model import NewModel  # noqa
    ```
 3. **Generate Migration**:
    ```bash
@@ -122,8 +122,8 @@ app/
 ├── api/          # API route definitions (Endpoints)
 ├── core/         # Core configuration (Config, Security, Events)
 ├── db/           # Database connection and Session management
-├── models/       # SQLModel data model definitions
-├── schemas/      # Pydantic data validation models (Request/Response)
-├── services/     # Complex business logic layer
+├── model/        # SQLModel data model definitions
+├── schema/       # Pydantic data validation models (Request/Response)
+├── service/      # Complex business logic layer
 └── main.py       # Application entry point
 ```

@@ -1,6 +1,6 @@
 from sqlmodel import Field
 
-from app.models.base import BaseModel, SoftDeleteModel
+from app.model.base import BaseModel, SoftDeleteModel
 
 
 class User(BaseModel, SoftDeleteModel, table=True):
